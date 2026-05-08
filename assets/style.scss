@@ -235,6 +235,13 @@ body {
 
 .header {
     flex: 0 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+    width: 100vw;
+    background: #fff;
+    border-bottom: 1px solid #141313;
 
     &__row {
         justify-content: space-between;
@@ -273,6 +280,107 @@ body {
 
 .footer {
     flex: 0 0 auto;
+    background: #131414;
+    position: relative;
+    
+    &__left {
+        border-right: 1px solid #fffbef;
+        display: flex;
+        flex-direction: column;
+        padding: 75px 0 10px 170px;
+    }
+
+    &__row {
+        justify-content: space-between;
+    }
+
+    &__logo {
+        max-width: 303px;
+        margin-bottom: 16px;
+    }
+
+    &__text {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 14px;
+        color: #fff;
+        max-width: 303px;
+        margin-bottom: 16px;
+        min-height: 130px;
+    }
+
+    &__dig {
+        display: flex;
+        gap: 5px;
+        max-width: max-content;
+
+        &-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &-title {
+            font-family: var(--second-family);
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        &-text {
+            font-family: var(--second-family);
+            font-weight: 400;
+            font-size: 14px;
+            color: #938c89;
+
+            &-second {
+                margin-right: 4px;
+            }
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        background: #fffbef;
+        margin: 16px 0 12px 0;
+    }
+
+    &__nav {
+        display: flex;
+        gap: 35px;
+        padding: 75px 35px 75px 85px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        &-title {
+            font-family: var(--second-family);
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        &-item {
+            max-width: 200px;
+            
+            & a {
+                font-family: var(--second-family);
+                font-weight: 400;
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+    }
+
+    &__right {
+
+    }
 }
 
 .main {
@@ -283,9 +391,7 @@ body {
 
 .first {
     background: #141313;
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // background-position: left;
+    margin-top: 87px;
     position: relative;
 
     &__img {
@@ -1046,11 +1152,11 @@ body {
             width: 236px;
             height: 1px;
             background: #e1ad62;
-            margin: 15px 0;
+            margin: 0 0 15px 0;
         }
 
         &-body {
-            padding: 0;
+            padding: 0 25px;
             max-width: 800px;
             max-height: 0;
             overflow: hidden;
