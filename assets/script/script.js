@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     return this;
     };
-
     $('input[type="tel"]')
     .mask('+7 (999) 999 99 99', { autoclear: false })
     .on('click', function(e) {
@@ -30,12 +29,15 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
-    var swiper = new Swiper(".mySwiper", {
-      navigation: {
-        nextEl: ".slider__button-right",
-        prevEl: ".slider__button-left",
-      },
-    });
+    const swiperElement = document.querySelector('.mySwiper');
+    if (swiperElement) {
+        new Swiper('.mySwiper', {
+            navigation: {
+                nextEl: '.slider__button-right',
+                prevEl: '.slider__button-left',
+            },
+        });
+    }
 
 
 
@@ -62,7 +64,37 @@ document.addEventListener("DOMContentLoaded", function(){
     })();
 
 
-    
+    //бургер
+    const burger = document.querySelector('.burger');
+    const overlay = document.querySelector('.opacite');
+    const body = document.body;
+    const burgerButtons = document.querySelectorAll('#nav-icon1, #nav-icon2');
+    if (!burger || !overlay || !burgerButtons.length) return;
+    burgerButtons.forEach(button => {
+        button.addEventListener('click', function (e) {
+            e.stopPropagation();
+            button.classList.toggle('open');
+            burger.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('hidden');
+        });
+    });
+    document.addEventListener('click', function (e) {
+        const clickedInsideBurger = e.target.closest('.burger');
+        const clickedBurgerButton = e.target.closest('#nav-icon1, #nav-icon2');
+        if (
+            burger.classList.contains('active') &&
+            !clickedInsideBurger &&
+            !clickedBurgerButton
+        ) {
+            burger.classList.remove('active');
+            overlay.classList.remove('active');
+            body.classList.remove('hidden');
+            burgerButtons.forEach(button => {
+                button.classList.remove('open');
+            });
+        }
+    });
 
 
 

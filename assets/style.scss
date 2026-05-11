@@ -248,6 +248,7 @@ body {
         padding: 23px 0;
         align-items: center;
         gap: 12px;
+        position: relative;
     }
 
     &__logo {
@@ -267,15 +268,176 @@ body {
     }
 }
 
+.social {
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000000000000;
+
+        &-item {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #131414;
+            transition: .4s;
+
+            &:hover {
+                background: #e1ad62;
+            }
+
+            &:last-child {
+                background: #e1ad62;
+
+                &:hover {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+
 .burger {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    padding: 25px 13px;
+    gap: 20px;
+    min-width: 260px;
+    z-index: 1000;
+
+    &.active {
+        display: flex; 
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: right;
+
+        &-item {
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #141313;
+            transition: .4s;
+
+            &:hover {
+                color: #e1ad62;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 12px;
+        margin-left: auto;
+
+        &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #141313;
+            transition: .4s;
+
+            &:hover {
+                border: 1px solid #e1ad62;
+                background: #e1ad62;
+            }
+        }
+    }
+
     &__button {
         border: 1px solid #141313;
-        padding: 10px 8px;
+        width: 38px;
+        height: 38px;
         flex-shrink: 0;
         justify-content: center;
         display: flex;
         align-items: center;
+        transition: .4s;
+
+        &:hover {
+            background: #e1ad62;
+        }
     }
+}
+
+#nav-icon1 {
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 22px;
+  background: #131414;
+  opacity: 1;
+  left: 8px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 10px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 17px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 24px;
+}
+
+#nav-icon1.open span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.open span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 
 .footer {
@@ -313,6 +475,7 @@ body {
         display: flex;
         gap: 5px;
         max-width: max-content;
+        align-items: center;
 
         &-left {
             display: flex;
@@ -375,6 +538,11 @@ body {
                 font-weight: 400;
                 font-size: 14px;
                 color: #fff;
+                transition: .4s;
+
+                &:hover {
+                    color: #e1ad62;
+                }
             }
         }
     }
@@ -383,6 +551,7 @@ body {
 .main {
     flex: 1 0 auto;  
     display: flex;
+    position: relative;
     flex-direction: column;
 }
 
@@ -429,6 +598,18 @@ body {
     & .text {
         color: #fff;
         min-height: 130px;
+    }
+
+    &__service {
+        & .first {
+            &__row {
+                max-width: 650px;
+
+                & .text {
+                    max-width: 390px;
+                }
+            }
+        }
     }
 }
 
@@ -885,6 +1066,24 @@ body {
 .price {
     background: #141313;
 
+    &__bottom {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        padding: 25px 0 40px 0;
+
+        &-block {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        &-list {
+            display: flex;
+            gap: 120px;
+        }
+    }
+
     &__row {
         flex-direction: column;
         padding: 80px 0;
@@ -949,6 +1148,12 @@ body {
     & .button.black {
         border: 1px solid #fff;
         padding: 20px 30px;
+    }
+    
+    &__service {
+        & .container {
+            padding: 0;
+        }
     }
 }
 
@@ -1741,6 +1946,7 @@ body {
     .header {
         &__row {
             padding: 10px 0;
+            position: static;
         }
     }
 
@@ -1977,6 +2183,14 @@ body {
         &__row {
             padding: 30px 0;
             gap: 10px;
+        }
+
+        &__bottom {
+            padding: 15px 0 20px 0;
+            
+            &-list {
+                gap: 30px;
+            }
         }
     }
 
@@ -2246,6 +2460,20 @@ body {
 
         & h2 {
             text-align: center;
+        }
+
+        &__bottom {
+            padding: 10px 15px 10px 15px;
+            justify-content: start;
+
+            &-block {
+                gap: 10px;
+            }
+
+            &-list {
+                gap: 10px;
+                flex-direction: column;
+            }
         }
     }
 
