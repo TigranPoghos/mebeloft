@@ -1061,6 +1061,91 @@ body {
             z-index: -1;
         }
     }
+
+    &__img {
+        align-items: center;
+        display: flex;
+        width: 100%;
+
+        & img {
+            width: 100%;
+            max-height: 520px;
+        }
+    }
+
+    &__service {
+        & .work {
+            &__content {
+                max-width: 520px;
+
+                & .text {
+                    max-width: 386px;
+                }
+
+                &-list {
+                    max-width: 386px;
+
+                    & .text-light span {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &__title {
+                margin-bottom: 0;
+            }
+        }
+
+        &-row {
+            flex-direction: row-reverse;
+            padding-bottom: 50px;
+            gap: 20px;
+        }
+
+        &-content {
+            max-width: 680px !important;
+            padding: 0;
+
+            &-2 {
+                padding: 0;
+            }
+        }
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            & .work {
+                &__img {
+                    justify-content: center;
+
+                    & img {
+                        max-height: 250px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        &-column {
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            padding-top: 50px;
+
+            & .work {
+                &__title {
+                    max-width: 735px;
+                }
+            }
+        }
+
+        &-block {
+            display: flex;
+            gap: 20px;
+        } 
+    }
 }
 
 .price {
@@ -1395,6 +1480,85 @@ body {
     }
 }
 
+.tech {
+    background: #141313;
+
+    &__row {
+        padding: 60px 0;
+        gap: 22px;
+        flex-direction: column;
+    }
+
+    &__block {
+        display: flex;
+        gap: 40px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+        flex-shrink: 0;
+
+        &-left {
+            width: 4px;
+            height: 100%;
+            background: #e1ad62;
+        }
+
+        &-bottom {
+            display: flex;
+            gap: 25px;
+        }
+
+        &-right {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            max-width: 390px;
+
+            & h2, p {
+                color: #fff;
+            }
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        & h4, p {
+            color: #fff;
+        }
+    }
+
+    &__item {
+        width: calc(50% - 10px);
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+
+        &-title {
+            font-weight: 700;
+            margin-left: 22px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -13px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: #fff;
+            }
+        }
+    }
+}
+
 .mobile {
     display: none;
 }
@@ -1407,6 +1571,14 @@ body {
     .first {
         &__row {
             padding: 60px 0;
+        }
+    }
+
+    .tech {
+        &__content {
+            &-right {
+                max-width: 280px;
+            }
         }
     }
 
@@ -1496,6 +1668,18 @@ body {
         &__content {
             padding: 50px 0;
             gap: 15px;
+        }
+
+        &__service {
+            &-content {
+                &-2 {
+                    padding: 0;
+                }
+            }
+
+            &-content {
+                padding: 0;
+            }
         }
     }
 
@@ -1623,6 +1807,34 @@ body {
 
         &__phone {
             font-size: 14px;
+        }
+    }
+
+    .tech {
+        &__row {
+            padding: 40px 0;
+            gap: 15px;
+        }
+
+        &__content {
+            gap: 15px;
+
+            &-right {
+                max-width: 240px;
+                gap: 15px;
+            }
+        }
+
+        &__block {
+            gap: 20px;
+        }
+
+        &__wrapper {
+            gap: 10px;
+        }
+
+        &__item {
+            width: calc(50% - 5px);
         }
     }
 
@@ -1806,6 +2018,42 @@ body {
                 left: -15px;
                 width: 35px;
                 height: 35px;
+            }
+        }
+
+        &__service .work__content {
+            max-width: 300px;
+        }
+
+        &__service {
+            &-content {
+                padding: 0;
+
+                &-2 {
+                    padding: 0;
+                }
+            }
+
+            &-column {
+                & .work {
+                    &__title {
+                        max-width: 600px;
+                    }
+                }
+            }
+
+            &-container {
+                & .work {
+                    &__img img {
+                        max-height: 200px;
+                    }
+                }
+            }
+        }
+
+        &__img {
+            & img {
+                max-height: 430px;
             }
         }
     }
@@ -1992,6 +2240,29 @@ body {
         }
     }
 
+    .tech {
+        &__block {
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__content {
+            &-right {
+                max-width: 100%;
+                gap: 10px;
+            }
+        }
+
+        &__row {
+            gap: 10px;
+            padding: 30px 0;
+        }
+    }
+
     .container {
         padding: 0 20px;
     }
@@ -2143,6 +2414,8 @@ body {
     .work {
         &__content {
             padding: 0 0 30px 0;
+            max-width: 100%;
+            flex-shrink: inherit;
 
             &-list {
                 gap: 3px;
@@ -2151,6 +2424,10 @@ body {
 
         &__img {
             max-width: 400px;
+
+            & img {
+                max-height: 270px;
+            }
         }
 
         &__mobile {
@@ -2166,6 +2443,43 @@ body {
 
         &__row {
             flex-direction: column-reverse;
+        }
+
+        &__service {
+            & .work__content {
+                max-width: 100%;
+            }
+
+            & .work__content-list {
+                max-width: 100%;
+            }
+
+            &-container {
+                flex-direction: column-reverse;
+                gap: 0;
+            }
+
+            &-column {
+                padding-bottom: 30px;
+                padding-top: 0;
+
+                & .work {
+                    &__mobile {
+                        display: none;
+                    }
+                }
+            }
+
+            &-row {
+                padding-bottom: 3px;
+                gap: 10px;
+            }
+
+            &-content {
+                &-2 {
+                    padding: 0;
+                }
+            }
         }
     }
 
