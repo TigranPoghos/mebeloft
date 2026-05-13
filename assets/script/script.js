@@ -99,4 +99,94 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+    //каталог
+    (function popularItems() {
+
+        const popularWrapper = document.querySelector('.popularJS');
+
+        if (!popularWrapper) return;
+
+        const popularItems = popularWrapper.querySelectorAll('.popular__item');
+        const popularButton = document.querySelector('.popular__button');
+
+        let visibleItems = 9;
+
+        if (window.innerWidth < 768) {
+            visibleItems = 6;
+        }
+
+        if (window.innerWidth < 576) {
+            visibleItems = 4;
+        }
+
+        if (popularItems.length <= visibleItems) {
+
+            if (popularButton) {
+                popularButton.style.display = 'none';
+            }
+
+            return;
+        }
+
+        popularItems.forEach((item, index) => {
+
+            if (index >= visibleItems) {
+                item.style.display = 'none';
+            }
+
+        });
+
+        if (popularButton) {
+
+            popularButton.addEventListener('click', function () {
+
+                popularItems.forEach(item => {
+                    item.style.display = '';
+                });
+
+                popularButton.style.display = 'none';
+
+            });
+
+        }
+
+    })();
+
+
+    //галерея
+    (function galleryItems() {
+        const galleryWrapper = document.querySelector('.gallery__wrapper');
+        if (!galleryWrapper) return;
+        const galleryItems = galleryWrapper.querySelectorAll('img');
+        const galleryButton = document.querySelector('.gallery__button');
+        let visibleItems = 9;
+        if (window.innerWidth < 768) {
+            visibleItems = 6;
+        }
+        if (window.innerWidth < 576) {
+            visibleItems = 4;
+        }
+        if (galleryItems.length <= visibleItems) {
+            if (galleryButton) {
+                galleryButton.style.display = 'none';
+            }
+            return;
+        }
+        galleryItems.forEach((item, index) => {
+            if (index >= visibleItems) {
+                item.style.display = 'none';
+            }
+        });
+        if (galleryButton) {
+            galleryButton.addEventListener('click', function () {
+                galleryItems.forEach(item => {
+                    item.style.display = '';
+                });
+                galleryButton.style.display = 'none';
+            });
+        }
+    })();
+
+
+
 })
