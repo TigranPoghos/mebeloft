@@ -1728,6 +1728,15 @@ body {
             }
         }
     }
+
+    &__solo {
+        justify-content: space-between;
+
+        & .text-light {
+            color: #fff;
+            max-width: 270px;
+        }
+    }
 }
 
 .delivery {
@@ -1888,6 +1897,96 @@ body {
     }
 }
 
+.sotrud {
+    &__row {
+        flex-direction: column;
+        gap: 30px;
+        padding: 60px 0;
+
+        & .section-title {
+            margin-left: 35px;
+        }
+    }
+
+    &__middle {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 16px;
+        color: #141313;
+        max-width: 369px;
+    }
+
+    &__title {
+        position: relative;
+        max-width: 430px;
+        margin-left: 35px;
+        z-index: 2;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -15px;       
+            left: -35px;      
+            width: 65px;       
+            height: 65px;
+            background-color: #e1ad62;
+            z-index: -1;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        
+        &-2 {
+            & .sotrud__item {
+                gap: 15px;
+            }
+        }
+
+        &.column-3 {
+            & .sotrud {
+                &__item {
+                    width: calc(33.33% - 27px);
+                }
+            }
+        }
+
+        &.column-2 {
+            & .sotrud {
+                &__item {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        & .tech {
+            &__item {
+                &-title {
+                    &::before {
+                        background: #131414;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .mobile {
     display: none;
 }
@@ -1925,6 +2024,16 @@ body {
         &__content {
             &-right {
                 max-width: 280px;
+            }
+        }
+
+        &__solo {
+            & .tech {
+                &__content {
+                    &-right {
+                        max-width: 390px;
+                    }
+                }
             }
         }
     }
@@ -2115,6 +2224,12 @@ body {
         padding: 0 40px;
     }
 
+    .sotrud {
+        &__row {
+            padding: 40px 0;
+        }
+    }
+
     .card {
         &__row {
             padding: 40px 0;
@@ -2210,6 +2325,16 @@ body {
 
         &__item {
             width: calc(50% - 5px);
+        }
+
+        &__solo {
+            & .tech {
+                &__content {
+                    &-right {
+                        max-width: 340px;
+                    }
+                }
+            }
         }
     }
 
@@ -2709,6 +2834,59 @@ body {
 
     .container {
         padding: 0 20px;
+    }
+
+    .sotrud {
+        &__row {
+            padding: 30px 0;
+
+            & .section-title {
+                margin-left: 15px;
+            }
+        }
+
+        &__wrapper {
+            gap: 2px;
+
+            &.column-3 {
+                & .sotrud {
+                    &__item {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.column-2 {
+                & .sotrud {
+                    &__item {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &-2 {
+                & .sotrud__item {
+                    gap: 2px;
+                }
+            }
+        }
+
+        &__middle {
+            flex-direction: column;
+            align-items: start;
+            margin-bottom: 0;
+            gap: 10px;
+        }
+
+        &__title {
+            margin-left: 15px;
+
+            &::before {
+                left: -15px;
+                width: 35px;
+                height: 35px;
+            }
+        }
     }
     
     .partner {
