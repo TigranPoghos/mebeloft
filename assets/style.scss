@@ -810,7 +810,7 @@ body {
 
         &-line {
             position: absolute;
-            height: 220px;
+            height: 86%;
             width: 4px;
             right: 0;
             top: 50px;
@@ -1987,6 +1987,64 @@ body {
     }
 }
 
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000000000;
+    padding: 30px 30px 60px 30px;
+    width: 1300px;
+    max-width: 90%;
+    max-height: 80%;
+    overflow-y: scroll;
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 40px;
+        text-transform: uppercase;
+        color: #141313;
+    }
+
+    &__close {
+        display: flex;
+        margin: 0 0 5px auto;
+    }
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        color: #141313;
+        max-width: 712px;
+        margin: 20px 0 60px 0;
+    }
+    
+    & form {
+        padding: 1px;
+    }
+
+    & .form {
+        &__top {
+            & input {
+                width: 100%;
+            }
+        }
+
+        &__bottom {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .contact {
+        &__buttons {
+            margin-top: 60px;
+        }
+    }
+}
+
 .mobile {
     display: none;
 }
@@ -2722,6 +2780,27 @@ body {
             }
         }
     }
+
+    .popup {
+        & .form {
+            &__top {
+                & input {
+                    padding: 22px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__text {
+            margin: 20px 0 40px 0;
+        }
+
+        & .contact {
+            &__buttons {
+                margin-top: 40px;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -3446,6 +3525,31 @@ body {
                 & img {
                     height: 200px;
                 }
+            }
+        }
+    }
+
+    .popup {
+        padding: 20px 20px 40px 20px;
+
+        &__title {
+            font-size: 26px;
+        }
+
+        &__text {
+            margin: 10px 0 20px 0;
+            font-size: 16px;
+        }
+
+        & .form {
+            &__bottom {
+                margin-bottom: 5px;
+            }
+        }
+
+        & .contact {
+            &__buttons {
+                margin-top: 20px;
             }
         }
     }
