@@ -189,4 +189,57 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 
+
+    const openButtons = document.querySelectorAll('[data-popup-open]');
+    const popups = document.querySelectorAll('[data-popup]');
+    const popupOverlay = document.querySelector('.popup__overlay');
+
+    if (!openButtons.length || !popups.length || !popupOverlay) return;
+
+    function closeAllPopups() {
+        popups.forEach(popup => {
+            popup.classList.remove('active');
+        });
+
+        popupOverlay.classList.remove('active');
+        body.classList.remove('hidden');
+    }
+
+    function openPopup(name) {
+        const popup = document.querySelector(`[data-popup="${name}"]`);
+
+        if (!popup) return;
+
+        closeAllPopups();
+
+        popup.classList.add('active');
+        popupOverlay.classList.add('active');
+        body.classList.add('hidden');
+    }
+
+    openButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const popupName = this.dataset.popupOpen;
+            openPopup(popupName);
+        });
+    });
+
+    document.addEventListener('click', function (event) {
+        if (event.target.closest('[data-popup-close]')) {
+            closeAllPopups();
+        }
+    });
+
+    popupOverlay.addEventListener('click', closeAllPopups);
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeAllPopups();
+        }
+    });
+
+
+
+
+
 })

@@ -234,12 +234,28 @@ body {
     }
 }
 
+.popup__overlay {
+    background: rgba(0, 0, 0, .5);
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(3px);
+
+    &.active {
+        display: block;
+    }
+}
+
 .header {
     flex: 0 0 auto;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10000000;
+    z-index: 100000;
     width: 100vw;
     background: #fff;
     border-bottom: 1px solid #141313;
@@ -277,7 +293,7 @@ body {
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 100000;
+        z-index: 10000;
 
         &-item {
             width: 45px;
@@ -1998,6 +2014,12 @@ body {
     max-width: 90%;
     max-height: 80%;
     overflow-y: scroll;
+    scrollbar-width: thin;
+    display: none;
+
+    &.active {
+        display: block;
+    }
 
     &__title {
         font-family: var(--font-family);
@@ -2885,6 +2907,12 @@ body {
 
         & .text {
             min-height: 110px;
+        }
+
+        &__buttons {
+            & a {
+                text-align: center;
+            }
         }
     }
 

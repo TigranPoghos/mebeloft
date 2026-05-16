@@ -18,7 +18,7 @@
                     <img src="assets/image/logo.png" alt="">
                 </a>
                 <a href="tel:+79999999999" class="header__phone decs">+7 (999) 999-99-99</a>
-                <button class="button decs" type="button"><span>Оставить заявку</span></button>
+                <button data-popup-open="bid" class="button decs" type="button"><span>Оставить заявку</span></button>
                 <button id="nav-icon1" class="burger__button">
                     <span></span>
                     <span></span>
@@ -93,7 +93,7 @@
                     <h3 class="text">Изготавливаю столы, стеллажи, перегородки и мебель в стиле лофт на заказ — напрямую от частного мастера, без посредников и лишних переплат. Делаю под ваш размер, интерьер и задачу: для дома, офиса, кафе и коммерческих пространств.</h3>
                     <div class="first__buttons">
                         <a href="portfolio.html" class="button color"><span>Посмотреть работы</span></a>
-                        <button type="button" class="button"><span>Рассчитать стоимость</span></button>
+                        <button data-popup-open="price" type="button" class="button"><span>Рассчитать стоимость</span></button>
                     </div>
                 </div>
             </div>
@@ -672,8 +672,30 @@
             </div>
         </section>
     </main>
-    <div class="popup" style="background: url('./assets/image/popup__back.jpg') no-repeat center / cover;">
-        <button type="button" class="popup__close">
+    <div data-popup="bid" class="popup" style="background: url('./assets/image/popup__back.jpg') no-repeat center / cover;">
+        <button type="button" class="popup__close" data-popup-close>
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.83831 0L25 22.0588L22.1784 25L1.01675 2.94118L3.83831 0Z" fill="#141313" />
+                <path d="M0 22.0588L21.1617 3.71884e-07L23.9832 2.94118L2.82156 25L0 22.0588Z" fill="#141313" />
+            </svg>
+        </button>
+        <p class="popup__title">Оставьте заявку и получите расчет уже сегодня</p>
+        <p class="popup__text">Отвечу в течение 15–30 минут, проконсультирую и предложу решение под ваш бюджет, размеры и стиль интерьера.</p>
+        <form action="#">
+            <div class="form__bottom form__top">
+                <input type="text" placeholder="ВАШЕ ИМЯ" required>
+                <input type="tel" placeholder="Номер телефона" required>
+            </div>
+            <div class="form__top">
+                <input type="text" placeholder="Что нужно изготовить?">
+            </div>
+            <div class="contact__buttons">
+                <button type="submit" class="button"><span>ОТПРАВИТЬ</span></button>
+            </div>
+        </form>
+    </div>
+    <div data-popup="price" class="popup" style="background: url('./assets/image/popup__back.jpg') no-repeat center / cover;">
+        <button type="button" class="popup__close" data-popup-close>
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.83831 0L25 22.0588L22.1784 25L1.01675 2.94118L3.83831 0Z" fill="#141313" />
                 <path d="M0 22.0588L21.1617 3.71884e-07L23.9832 2.94118L2.82156 25L0 22.0588Z" fill="#141313" />
@@ -695,6 +717,7 @@
         </form>
     </div>
     <div class="opacite"></div>
+    <div class="popup__overlay"></div>
     <footer class="footer">
         <div class="footer__row row">
             <div class="footer__left" style="background: url('./assets//image/footer__back.png') no-repeat center center / cover;">
