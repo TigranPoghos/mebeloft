@@ -2014,6 +2014,59 @@ body {
     }
 }
 
+.error {
+    background: #141313;
+    min-height: 70vh;
+    margin-top: 87px;
+
+    & .container {
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    &__row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: 173px;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+    }
+    
+    &__line {
+        width: 475px;
+        height: 5px;
+        background: #e1ad62;
+    }
+    
+    &__subtitle {
+        font-family: var(--font-family);
+        font-weight: 800;
+        font-size: 48px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    &__button {
+        margin-top: 60px;
+        padding: 30px 60px;
+        text-align: center;
+
+        & span {
+            font-size: 20px;
+        }
+    }
+}
+
 .popup {
     position: fixed;
     top: 50%;
@@ -2850,6 +2903,18 @@ body {
         max-width: 100%;
     }
 
+    .error {
+        margin-top: 59px;
+
+        &__title {
+            font-size: 120px;
+        }
+
+        &__subtitle {
+            font-size: 40px;
+        }
+    }
+
     .decs {
         display: none;
     }
@@ -3628,6 +3693,13 @@ body {
 
     .file-upload {
         padding: 15px 20px;
+    }
+
+    .error {
+        &__line {
+            max-width: 100%;
+            width: 100%;
+        }
     }
 
     .gallery {

@@ -231,19 +231,39 @@ document.addEventListener("DOMContentLoaded", function(){
 
     
     const fileInputs = document.querySelectorAll('.file-upload-input');
-    fileInputs.forEach(input => {
-        input.addEventListener('change', function () {
-            const fileName = this.files.length
-                ? this.files[0].name
-                : 'Файл не выбран';
-
-            const text = this.closest('form')
-                ?.querySelector('.file-upload-name');
-
-            if (text) {
-                text.textContent = fileName;
-            }
+    if (fileInputs.length) {
+        fileInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                const fileName = this.files.length
+                    ? this.files[0].name
+                    : 'Файл не выбран';
+                const text = this.closest('form')
+                    ?.querySelector('.file-upload-name');
+                if (text) {
+                    text.textContent = fileName;
+                }
+            });
         });
+    }
+
+
+
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.utils.toArray(".anim").forEach(elem => {
+        gsap.fromTo(elem, 
+            { opacity: 0, y: 20 }, 
+            { 
+            opacity: 1, 
+            y: 0, 
+            duration: 0.6, 
+            ease: "power2.out",
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
     });
 
 

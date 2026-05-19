@@ -18,7 +18,7 @@
                     <img src="assets/image/logo.png" alt="">
                 </a>
                 <a href="tel:+79999999999" class="header__phone decs">+7 (999) 999-99-99</a>
-                <button class="button decs" type="button"><span>Оставить заявку</span></button>
+                <button data-popup-open="bid" class="button decs" type="button"><span>Оставить заявку</span></button>
                 <button id="nav-icon1" class="burger__button">
                     <span></span>
                     <span></span>
@@ -250,7 +250,7 @@
         </button>
         <p class="popup__title">Оставьте заявку и получите расчет уже сегодня</p>
         <p class="popup__text">Отвечу в течение 15–30 минут, проконсультирую и предложу решение под ваш бюджет, размеры и стиль интерьера.</p>
-        <form action="#">
+        <form action="thanks.html">
             <div class="form__bottom form__top">
                 <input type="text" placeholder="ВАШЕ ИМЯ" required>
                 <input type="tel" placeholder="Номер телефона" required>
@@ -272,7 +272,7 @@
         </button>
         <p class="popup__title">Оставьте заявку и получите расчет уже сегодня</p>
         <p class="popup__text">Отвечу в течение 15–30 минут, проконсультирую и предложу решение под ваш бюджет, размеры и стиль интерьера.</p>
-        <form action="#">
+        <form action="thanks.html">
             <div class="form__bottom form__top">
                 <input type="text" placeholder="ВАШЕ ИМЯ" required>
                 <input type="tel" placeholder="Номер телефона" required>
@@ -290,6 +290,7 @@
             </div>
         </form>
     </div>
+    <div class="popup__overlay"></div>
     <div class="opacite"></div>
     <footer class="footer">
         <div class="footer__row row">
@@ -333,6 +334,8 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
