@@ -425,7 +425,7 @@
                     <h2>Не уверены, что именно нужно?</h2>
                     <div class="need__line"></div>
                     <p class="text">Опишите задачу или пришлите фото, референс, размеры или пример из интернета — предложу оптимальное решение под ваш интерьер, бюджет и назначение мебели.</p>
-                    <button type="button" class="button black"><span>Получить точный расчет</span></button>
+                    <button type="button" data-popup-open="price" class="button black"><span>Получить точный расчет</span></button>
                 </div>
             </div>
         </section>
@@ -445,7 +445,7 @@
                             <li class="text-light">Изготавливаю изделие</li>
                             <li class="text-light">Доставка и установка</li>
                         </ul>
-                        <button type="button" class="button color"><span>Оставить заявку</span></button>
+                        <button data-popup-open="bid" type="button" class="button color"><span>Оставить заявку</span></button>
                     </div>
                     <div class="work__img">
                         <img src="assets/image/work__img.png" alt="">
@@ -487,7 +487,7 @@
                             </ul>
                         </div>
                     </div>
-                    <button type="button" class="button black"><span>Получить точный расчет</span></button>
+                    <button type="button" data-popup-open="price" class="button black"><span>Получить точный расчет</span></button>
                 </div>
             </div>
         </section>
@@ -515,7 +515,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <button type="button" class="button black"><span>Получить точный расчет</span></button>
+                        <button data-popup-open="price" type="button" class="button black"><span>Получить точный расчет</span></button>
                     </div>
                     <div class="slider__right">
                         <h2>Работаю с частными и коммерческими заказами</h2>
@@ -712,7 +712,12 @@
                 <input type="text" placeholder="Что нужно изготовить?">
             </div>
             <div class="contact__buttons">
-                <button type="submit" class="button"><span>ОТПРАВИТЬ</span></button>
+                <button type="submit" class="button"><span>Рассчитать</span></button>
+                <label class="button file-upload">
+                    <span>Загрузить файл</span>
+                    <input type="file" name="file" class="file-upload-input">
+                </label>
+                <p class="file-upload-name text">Файл не выбран</p>
             </div>
         </form>
     </div>

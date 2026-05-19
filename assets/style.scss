@@ -2003,6 +2003,17 @@ body {
     }
 }
 
+.file-upload {
+    padding: 22px 44px;
+    min-width: 300px;
+    text-align: center;
+    cursor: pointer;
+
+    & input {
+        display: none;
+    }
+}
+
 .popup {
     position: fixed;
     top: 50%;
@@ -2302,6 +2313,10 @@ body {
 @media (max-width: 1024px) {
     .container {
         padding: 0 40px;
+    }
+
+    .file-upload {
+        min-width: 250px;
     }
 
     .sotrud {
@@ -2828,6 +2843,11 @@ body {
 @media (max-width: 768px) {
     .mobile {
         display: flex;
+    }
+
+    .file-upload {
+        width: 100%;
+        max-width: 100%;
     }
 
     .decs {
@@ -3578,6 +3598,7 @@ body {
         & .contact {
             &__buttons {
                 margin-top: 20px;
+                flex-direction: column;
             }
         }
     }
@@ -3603,6 +3624,10 @@ body {
         & .text {
             min-height: 180px;
         }
+    }
+
+    .file-upload {
+        padding: 15px 20px;
     }
 
     .gallery {
